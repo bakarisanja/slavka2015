@@ -9,6 +9,7 @@ class Model_admin extends CI_Model
 	private $token;
 	private $id;
 
+
 	/**
 	 * @param  geting int, num of caracters you want
 	 * @return int token for whriteing in database
@@ -39,9 +40,8 @@ class Model_admin extends CI_Model
 			$res = $this->db->query($sql, array($this->token, $this->id));
 			
 			return $this->token;
-
 		} else {
-			die('ne moze');
+			return false;
 		}
 	}
 }

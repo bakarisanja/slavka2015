@@ -29,7 +29,7 @@ $config['base_url'] = 'http://localhost/slavka2015/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

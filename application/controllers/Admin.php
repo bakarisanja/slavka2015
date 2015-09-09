@@ -6,20 +6,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Admin extends CI_Controller
 {
-	public function index()
+	public function __construct()
 	{
-		if (!$this->session->userdata('username')) {
-			$this->load->model('Model_admin');
-
-			if($token = $this->Model_admin->checkAdmin('slavka1','5449abce9417344bb63eb38fa6d7419f')) {
-				echo $token;
-			}
-
-		} else {
-			echo "moze";
+		parent::__construct();
+		$this->load->view('admin_views/header');
+		if(!$this->session->userdata('token')){
+			redirect('login');
 		}
-
-      // Do your code here
+		
 	}
 
+	public function index()
+	{
+		echo 'pera';
+		var_dump($this->session->userdata());
+	}
+
+	public function insert()
+	{
+		echo 'mica';
+	}
 }
