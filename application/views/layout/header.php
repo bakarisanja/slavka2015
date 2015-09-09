@@ -26,7 +26,7 @@
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">products <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
-					<li><a href="#">pojasevi</a></li>
+					<li><a href=<?php echo base_url()."category/1/pojasevi-leto-2015"?>>pojasevi</a></li>
 					<li><a href="#">brooches</a></li>
 					<li><a href="#">head bands</a></li>
 					<li><a href="#">necklace</a></li>
