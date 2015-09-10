@@ -39,7 +39,7 @@ class Model_admin extends CI_Model
 			$sql = "UPDATE admin SET admin_token  = ? where admin_id = ?";
 			$res = $this->db->query($sql, array($this->token, $this->id));
 			
-			return $this->token;
+		    return $this->token;
 		} else {
 			return false;
 		}

@@ -20,10 +20,18 @@ class Admin extends CI_Controller
 	{
 		echo 'pera';
 		var_dump($this->session->userdata());
+		$this->load->view('admin_views/blog');
 	}
 
-	public function insert()
+	public function categories()
 	{
-		echo 'mica';
+		$this->load->view('admin_views/categories');
 	}
+
+	public function list_products() {
+		$category_num = $this->uri->segment(3);
+		die($category_num);
+    $this->middle = 'about_me'; // passing middle to function. change this for different views.
+    $this->layout();
+  }
 }

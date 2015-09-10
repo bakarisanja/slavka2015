@@ -13,15 +13,30 @@ class Login extends CI_Controller
 	 */
 	public function index()
 	{
-		
-		$this->load->model('Model_admin');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('password', 'Password', 'required');
 
-		if($token = $this->Model_admin->checkAdmin('slavka','5449abce9417344bb63eb38fa6d7419f')){
-			$set_token = array('token' => $token);
-			$this->session->set_userdata($set_token);
-			redirect('admin');
-		} else {
+		if ($this->form_validation->run() == FALSE)
+		{
 			$this->load->view('admin_views/login');
+		}
+		else
+		{
+			$username = $_POST['username'];
+			$password = $_POST['password'];
+
+			$username = trim($username);
+			$password = trim($password);
+			$password = md5($password);
+
+			$this->load->model("Model_admin");
+			if(!$token = $this->Model_admin->checkAdmin($username,$password)){
+				$data['error'] = 'ne poklapa se';
+				$this->load->view('admin_views/login',$data);
+			}else{
+				$this->session->set_userdata('token', $token);
+				redirect('admin');
+			}
 		}
 	}
 
