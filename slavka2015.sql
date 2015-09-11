@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2015 at 04:42 PM
+-- Generation Time: Sep 11, 2015 at 05:40 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -50,6 +50,7 @@ INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `admin_toke
 CREATE TABLE IF NOT EXISTS `categorys` (
   `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `category_about` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`category_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
@@ -57,10 +58,10 @@ CREATE TABLE IF NOT EXISTS `categorys` (
 -- Dumping data for table `categorys`
 --
 
-INSERT INTO `categorys` (`category_id`, `category_name`) VALUES
-(1, 'brosevi'),
-(3, 'pojasevi'),
-(4, 'za bebe');
+INSERT INTO `categorys` (`category_id`, `category_name`, `category_about`) VALUES
+(1, 'brosevi', 'jesen-zime-2016'),
+(3, 'pojasevi', 'jesen-zima-2016'),
+(4, 'za bebe', 'razno');
 
 -- --------------------------------------------------------
 

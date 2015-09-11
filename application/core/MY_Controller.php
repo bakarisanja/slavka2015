@@ -6,6 +6,9 @@ class MY_Controller extends CI_Controller
    var $data      = array();
    //Load layout    
    public function layout() {
+    //loading categories in every controller
+    $this->load->model('Category_Model');
+    $this->data['categorys'] = $this->Category_Model->getAll();
      // making temlate and send data to view.
      $this->template['header']   = $this->load->view('layout/header', $this->data, true);
      $this->template['middle'] = $this->load->view($this->middle, $this->data, true);

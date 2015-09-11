@@ -26,12 +26,12 @@
 				<li class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">products <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
-					<li><a href=<?php echo base_url()."category/1/pojasevi-leto-2015"?>>pojasevi</a></li>
-					<li><a href="#">brooches</a></li>
-					<li><a href="#">head bands</a></li>
-					<li><a href="#">necklace</a></li>
-					<li><a href="#">bracelets</a></li>
-					<li><a href="#">babies corner</a></li>
+					<?php
+						for ($i=0; $i<count($categorys); $i++){
+							echo "<li><a href='".base_url()."category/".$categorys[$i]->category_id."/".$categorys[$i]->category_about."'>".$categorys[$i]->category_name."</a></li>";
+							//echo $categorys[$i]->category_id.' '.$categorys[$i]->category_name;
+						}
+					?>
 				  </ul>
 				</li>
 				<li><a href=<?php echo base_url()."how_to_buy"; ?>>how to buy</a></li>
