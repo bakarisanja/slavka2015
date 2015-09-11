@@ -1,0 +1,25 @@
+select
+    concat(table_name, '.', column_name) as 'foreign key',  
+    concat(referenced_table_name, '.', referenced_column_name) as 'references'
+from
+    information_schema.key_column_usage
+where
+    referenced_table_name is not null;
+
+-------------------------------
+
+prikazje imena svih constraintova(foreign key) u bazi
+
+use information_schema
+select *
+from information_schema.referential_constraints
+where constraint_schema = 'YOUR_DB'
+
+-----------------------------------------------
+
+left join primer
+
+SELECT products.*, categorys.category_name
+FROM products
+LEFT JOIN categorys
+ON products.category_id=categorys.category_id where categorys.category_id = 1;
