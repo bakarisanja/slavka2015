@@ -9,7 +9,9 @@ class Admin extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->view('admin_views/header');
+		$this->load->model('Category_Model');
+    	$data['categorys'] = $this->Category_Model->getAll();
+		$this->load->view('admin_views/header',$data);
 		if(!$this->session->userdata('token')){
 			redirect('login');
 		}
@@ -21,17 +23,78 @@ class Admin extends CI_Controller
 		echo 'pera';
 		var_dump($this->session->userdata());
 		$this->load->view('admin_views/blog');
+		$this->load->view('admin_views/footer');
 	}
 
 	public function categories()
 	{
 		$this->load->view('admin_views/categories');
+		$this->load->view('admin_views/footer');
 	}
 
-	public function list_products() {
-		$category_num = $this->uri->segment(3);
-		die($category_num);
-    $this->middle = 'about_me'; // passing middle to function. change this for different views.
-    $this->layout();
-  }
+	public function list_products()
+	{
+		$data['category'] = $this->uri->segment(3);
+		$this->load->view('admin_views/products', $data);
+		$this->load->view('admin_views/footer');
+    }
+
+    public function insert_product()
+    {
+    	if (empty($_POST['product_name']) || empty($_POST['product_about']) || empty($_FILES['product_image'])){
+    		die("Empty fields are not allowed!");
+    	}
+    	/*
+    	category_id getting from hidden filed, proudct id generates automaticly
+    	$sql = "INSERT INTO `products`(`products_id`, `products_name`, `products_about`, `products_image`, `category_id`) VALUES ('',? ,? ,? ,?)";
+		$res = $this->db->query($sql, array($this->token, $this->id));*/
+    	var_dump($_POST);
+    	var_dump($_FILES);
+    }
+
+    public function addCat()
+	{
+		$this->form_validation->set_rules('category_name', 'category name', 'required');
+		$this->form_validation->set_rules('category_about', 'category about', 'required');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('admin_views/categories');
+		} else {
+			$name = $_POST['category_name'];
+			$about = $_POST['category_about'];
+			$name = trim($name);
+			$about = trim($about);
+			$about = str_replace(" ", "-", $about);
+			
+			$this->load->model('Category_Model');
+			$this->Category_Model->addCat($name, $about);
+
+			redirect('admin/categories', 'refresh');
+		}
+       
+       var_dump($_POST);
+
+	}
+
+	public function update_delete()
+	{
+		if (isset($_POST['update'])) {
+			$name = $_POST['category_name'];
+			$about = $_POST['category_about'];
+			$name = trim($name);
+			$about = trim($about);
+			$about = str_replace(" ", "-", $about);
+			
+			$this->load->model('Category_Model');
+			$this->Category_Model->updateCat($_POST['category_id'], $name, $about);
+			redirect('admin/categories');
+		}
+
+		if (isset($_POST['delete'])) {
+			$this->load->model('Category_Model');
+			$this->Category_Model->deleteCat($_POST['category_id']);
+			redirect('admin/categories');
+		}
+	}
 }

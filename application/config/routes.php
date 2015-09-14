@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['category/(:num)/(:any)'] = 'category/list_products';
 $route['admin/category/(:num)'] = 'admin/list_products';
+$route['admin/category/insert_product'] = 'admin/insert_product';

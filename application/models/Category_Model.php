@@ -14,4 +14,22 @@ class Category_Model extends CI_Model
 		$this->categorys = $query->result();
 		return $this->categorys;
 	}
+
+	public function addCat($name, $about)
+	{
+		$sql = "INSERT INTO `categorys`(`category_id`, `category_name`, `category_about`) VALUES ('', ?, ?)";
+       	$res = $this->db->query($sql, array($name, $about));
+	}
+
+	public function deleteCat($id)
+	{
+		$sql = "DELETE FROM `categorys` WHERE category_id = ?";
+		$res = $this->db->query($sql, array($id));
+	}
+
+	public function updateCat($id, $name, $about)
+	{
+		$sql = "UPDATE `categorys` SET `category_name`= ?, `category_about`= ? WHERE category_id = ?";
+		$res = $this->db->query($sql, array($name, $about, $id)); 
+	}
 }
