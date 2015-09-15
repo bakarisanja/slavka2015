@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2015 at 05:40 PM
+-- Generation Time: Sep 15, 2015 at 04:14 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `admin_token`) VALUES
-(1, 'slavka', '5449abce9417344bb63eb38fa6d7419f', 'hDR7wfVyJe');
+(1, 'slavka', '5449abce9417344bb63eb38fa6d7419f', 'qRMsAemYgT');
 
 -- --------------------------------------------------------
 
@@ -52,16 +52,18 @@ CREATE TABLE IF NOT EXISTS `categorys` (
   `category_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `category_about` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `categorys`
 --
 
 INSERT INTO `categorys` (`category_id`, `category_name`, `category_about`) VALUES
-(1, 'brosevi', 'jesen-zime-2016'),
-(3, 'pojasevi', 'jesen-zima-2016'),
-(4, 'za bebe', 'razno');
+(10, 'šnale', 'jesen-zima-2015-2016'),
+(11, 'pojasevii', 'jesen-zima-2015-2016'),
+(13, 'za bebe', 'jesen-zima-2015-2016'),
+(14, 'za njega', 'jesen-zima-2015-2016'),
+(15, 'leptir mašne', 'jesen-zima-2015-2016');
 
 -- --------------------------------------------------------
 
@@ -74,18 +76,11 @@ CREATE TABLE IF NOT EXISTS `products` (
   `products_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `products_about` varchar(400) COLLATE utf8_unicode_ci NOT NULL,
   `products_image` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `products_image_thumb` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`products_id`),
   KEY `fk_categorys` (`category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`products_id`, `products_name`, `products_about`, `products_image`, `category_id`) VALUES
-(3, 'beli', 'sdfsdfsdf', 'qweqweqwe', 1),
-(4, 'zeleni pojas', 'sdfsdsdf', 'sdfsdfsdf', 3);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Constraints for dumped tables
