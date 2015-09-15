@@ -3,15 +3,16 @@ body {
 	padding:0;
 	padding-top:40px;
 	font-family: 'Marck Script', cursive;
+	font-family: 'Arial';
 	font-size: 18px;
-	font-weight:800;
+	/*font-weight:800;*/
 	}
 /*.background{
 	background-image:url('../images/blog/background.jpg');
 }*/
 .brand{
 	font-size:30px;
-	font-weight:800;
+	/*font-weight:800;*/
 	font-family: 'Marck Script', cursive;
 }
 .brand1{
@@ -38,8 +39,9 @@ body {
 
 .navbar-default .navbar-nav>li>a {
    font-family: 'Marck Script', cursive;
+   font-family: 'Arial';
    color:#777;
-   font-weight:800;
+   /*font-weight:800;*/
 }
 
 .navbar-nav{
@@ -76,7 +78,7 @@ body {
 
 .tekst h4{
 	font-size:24;
-	font-weight:800;
+	/*font-weight:800;*/
 }
 
 
@@ -92,8 +94,8 @@ body {
 		color: #FFFFFF;
 		margin: 0px;
 		padding-top: 20px;
-		/*font-family: 'Open Sans', sans-serif;*/
 		font-family: 'Marck Script', cursive;
+		font-family: 'Arial', sans-serif;
 		color:#4A4A4A;
 		text-align:center;
 	}
@@ -110,7 +112,8 @@ body {
 		font-size: 14px;
 		/*font-family: 'Open Sans', sans-serif;*/
 		font-family: 'Marck Script', cursive;
-		font-weight: 800;
+		font-family: 'Arial', sans-serif;
+		/*font-weight: 800;*/
 		text-align:center;
 		color:#777;
 	}
@@ -135,6 +138,7 @@ body {
 	.proucts_naslov{
 	text-align:center;
 	font-family: 'Marck Script', cursive;
+	font-family: 'Arial';
 	color:#4A4A4A;
 	padding:40px;
 	}
@@ -175,7 +179,7 @@ body {
 	.brand{
 		font-size:25px;
 		color:#777;
-		font-weight:800;
+		/*font-weight:800;*/
 	}
 	.brand1{
 	font-size:25px;
@@ -206,6 +210,7 @@ body {
 		padding-top: 3px;
 		/*font-family: 'Open Sans', sans-serif;*/
 		font-family: 'Marck Script', cursive;
+		font-family: 'Arial';
 		color:#4A4A4A;
 		text-align:center;
 	}
@@ -248,7 +253,7 @@ body {
 	
 	.proucts_naslov{
 	text-align:center;
-	font-family: 'Marck Script', cursive;
+	font-family: 'Arial';
 	color:#4A4A4A;
 
 	
@@ -257,7 +262,7 @@ body {
 	.tekst a{
 		color:#4a4a4a;
 		font-size:24px;
-		font-weight:800;
+		/*font-weight:800;*/
 	}
 }
 
@@ -265,6 +270,7 @@ body {
 	background-color:#FFC9FF;
 	border-color:#FFC9FF;
 	font-family: 'Marck Script', cursive;
+	font-family: 'Arial';
 }
 
 /*
@@ -341,7 +347,7 @@ h4 a:hover,h4 a:link, h4 a:active{
 	color:#3B3B3B;
 }
 .date{
-	font-weight:800;
+	/*font-weight:800;*/
 	text-decoration:underline;
 }
 
@@ -375,12 +381,13 @@ h4 a:hover,h4 a:link, h4 a:active{
 	padding-top:30px;
 	color:#4a4a4a;
 	font-family: 'Marck Script', cursive;
+	font-family: 'Arial';
 }
 
 /*ovde je name i price*/
 .title{
 	font-size:16px;
-	font-weight:800;
+	/*font-weight:800;*/
 }
 
 .dropdown-menu{

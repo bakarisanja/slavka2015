@@ -39,17 +39,18 @@ class Admin extends CI_Controller
 		$this->load->view('admin_views/footer');
     }
 
-    public function insert_product()
+    public function insertProduct()
     {
-    	if (empty($_POST['product_name']) || empty($_POST['product_about']) || empty($_FILES['product_image'])){
-    		die("Empty fields are not allowed!");
+    	if (empty($_POST['product_name']) || empty($_POST['product_about']) || empty($_FILES['product_image']) || $_FILES['product_image']['error'] || $_FILES['product_image']['type'] != 'image/jpeg'){
+    		die("Empty fields are not allowed, or file is not ok!");
+
+    	} else {
+    		echo "<div style=margin-top:100px;>";
+    		
+    		$this->load->model('Product_Model');
+    		$this->Product_Model->insertProduct('sdf','sdf','sdf');
     	}
-    	/*
-    	category_id getting from hidden filed, proudct id generates automaticly
-    	$sql = "INSERT INTO `products`(`products_id`, `products_name`, `products_about`, `products_image`, `category_id`) VALUES ('',? ,? ,? ,?)";
-		$res = $this->db->query($sql, array($this->token, $this->id));*/
-    	var_dump($_POST);
-    	var_dump($_FILES);
+    	
     }
 
     public function addCat()

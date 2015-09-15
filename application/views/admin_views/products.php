@@ -1,28 +1,21 @@
 <div class="container" style="margin-top:100px">
 <div class="row">
-<div class="col-md-6">
-<form role="form" action="insert_product" method="post" enctype="multipart/form-data">
-  <div class="form-group">
-    <label for="product_id">Product id</label>
-    <input type="text" class="form-control" name="product_id">
-    <input type="hidden" name="category_id" value=<?php echo $category; ?>>
-  </div>
+<div class="col-md-4">
+<form role="form" action="insertProduct" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="product_name">Product name</label>
     <input type="text" class="form-control" name="product_name">
   </div>
   <div class="form-group">
     <label for="product_about"> product about</label>
-     <textarea class="form-control" rows="3" name="product_about"></textarea>
+    <textarea class="form-control" rows="3" name="product_about"></textarea>
   </div>
   <input type="file" name="product_image" id="fileToUpload">
+  <input type="hidden" name="category" value=<?php echo $category; ?>>
   <button type="submit" class="btn btn-default">Insert</button>
 </form>
 </div>
-</div>
-<div class="row">
-<div class="col-md-7" style="float:left">
-<div class="span12">
+<div class="col-md-8" style="float:left">
 <?php
 echo "<table class='table table-striped'>";
 echo"     
@@ -37,7 +30,9 @@ echo"
 echo "</table>";
 
 ?>
-</div>
+<?php
+  echo $category;
+?>
 </div>
 </div>
 </div>

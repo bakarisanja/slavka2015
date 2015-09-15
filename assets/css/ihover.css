@@ -4452,21 +4452,24 @@
 	background-color:#FFC9FF;
 	border-color:#FFC9FF;
 	font-family: 'Marck Script', cursive;
+  font-family: 'Arial';
 	font-size:18px;
 }
 
-.dropdown-menu>li>a:{
-	color:a4a4a4;
+.dropdown-menu>li>a{
+	color:#777;
 	font-family: 'Marck Script', cursive;
+  font-family: 'Arial';
 	font-size:20px;
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-  color: #262626;
+  color: black;
   text-decoration: none;
   background-color: #FFC9FF;
   border-color:#FFC9FF;
   font-family: 'Marck Script', cursive;
+  font-family: 'Arial';
   text-decoration:underline;
 }
 
